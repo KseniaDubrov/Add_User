@@ -7,7 +7,7 @@ import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-const apiUrl = `http://localhost:8080`;
+const apiUrl = `https://add-user-mit.herokuapp.com`;
 
 class App extends Component {
   state = {
