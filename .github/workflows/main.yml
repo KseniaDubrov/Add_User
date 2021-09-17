@@ -18,4 +18,13 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'add-user-mit'
           heroku_email: 'kseniadvy@gmail.com'
-          buildpack: 'https://github.com/HashNuke/heroku-buildpack-elixir.git'
+          justlogin: true
+
+      - name: 'Login to heroku registry'
+        run: heroku container:login
+
+      - name: 'Build and push to heroku registry'
+        run: heroku container:push web --app email-service-web
+
+      - name: 'Releases the container'
+        run: heroku container:release web --app email-service-web
