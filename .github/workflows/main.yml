@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy-server:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,3 +18,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'add-user-mit'
           heroku_email: 'kseniadvy@gmail.com'
+          appdir: 'server'
